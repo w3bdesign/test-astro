@@ -1,5 +1,26 @@
 import { APIRoute } from "astro";
 
+
+
+export const get: APIRoute = ({ params, request }) => {
+    return {
+      body: JSON.stringify({
+        message: "This was a GET!"
+      })
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
 export const post: APIRoute = async ({ request }) => {
 
     if (request.headers.get('Content-Type') === 'application/json') {

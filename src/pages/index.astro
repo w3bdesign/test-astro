@@ -44,15 +44,12 @@ const onSubmit = (email: string) => {
     <main>
       <script>
         // Find all buttons with the `alert` class on the page.
-        const buttons = document.querySelectorAll("button");
+        const buttons = document.querySelectorAll("button.post");
 
         // Handle clicks on each button.
         buttons.forEach((button) => {
           button.addEventListener("click", () => {
-            /* fetch("/signin", {
-              method: "POST",
-              body: JSON.stringify("test@epost.no"),
-            });*/
+
 
             fetch("https://test-astro-nu.vercel.app/daniel", {
               method: "POST",
@@ -72,11 +69,57 @@ const onSubmit = (email: string) => {
               });
           });
         });
+
+
+
+
+
+
+        const getbuttons = document.querySelectorAll("button.get");
+
+        // Handle clicks on each button.
+        getbuttons.forEach((button) => {
+          button.addEventListener("click", () => {
+  
+
+            fetch("https://test-astro-nu.vercel.app/daniel", {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+
+              body: JSON.stringify({ "email": "test@epost.no" }),
+            
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log("Success:", data);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          });
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
       </script>
 
       <p>hello</p>
 
-      <button>Button! ..</button>
+      <button class="post">Button! post</button>
+
+      <button class="get"> Button! .. get</button>
 
    
     </main>
