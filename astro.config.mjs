@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
-import vercel from '@astrojs/vercel/serverless';
+//import vercel from '@astrojs/vercel/serverless';
+import vercelServerless from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 
@@ -9,7 +10,8 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   output: 'server',
   // integrations: [vercel()],
-  adapter: vercel({
+  /*adapter: vercel({
     includeFiles: ['./src/pages/api/daniel.ts']
-  })
+  })*/
+  adapter: vercelServerless(),
 });
