@@ -10,6 +10,6 @@ export default defineConfig({
   output: 'server',
   // integrations: [vercel()],
   adapter: vercel({
-    includeFiles: ['./daniel.ts']
+    includeFiles: ['./src/pages/daniel.ts']
   })
 });
