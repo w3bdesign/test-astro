@@ -7,9 +7,11 @@ export const post: APIRoute = async ({ request }) => {
 
   return {
     status: 200,
+
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
+
     body: JSON.stringify({
       message: "This was a POST!",
     }),

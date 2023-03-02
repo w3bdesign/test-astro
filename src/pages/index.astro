@@ -60,6 +60,8 @@ const onSubmit = (email: string) => {
               headers: {
                 "Content-Type": "application/json",
               },
+
+
               body: JSON.stringify({ email: "test@epost.no" }),
             })
               .then((response) => response.json())
