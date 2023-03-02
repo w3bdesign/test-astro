@@ -1,7 +1,17 @@
 import { APIRoute } from 'astro';
 
 
-export async function post({params, request}) {
+
+export const post: APIRoute = ({ request }) => {
+    return {
+      body: JSON.stringify({
+        message: "This was a POST!"
+      })
+    }
+  }
+
+
+
 
 
 
@@ -21,16 +31,16 @@ export async function post({params, request}) {
 
 
 
-    return {
+   /* return {
       body: JSON.stringify({
         name: 'Astro',
         url: 'https://astro.build/',
       }),
-    };
+    };*/
 
 
 
 
 
 
-  }
+  
