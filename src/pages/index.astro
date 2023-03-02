@@ -49,16 +49,21 @@ const onSubmit = (email: string) => {
         // Handle clicks on each button.
         buttons.forEach((button) => {
           button.addEventListener("click", async () => {
-            let test;
+           
 
             const response = await fetch("/api/daniel", {
               method: "POST",
+              headers: {
+    'Content-Type': 'application/json'
+  },
               body: JSON.stringify({
                 email: "test@epost.no",
               }),
             });
 
             const responseText = await response.text();
+
+            console.log("Response: ", response)
             console.log("responseText", responseText); // logs 'OK'
           });
         });
