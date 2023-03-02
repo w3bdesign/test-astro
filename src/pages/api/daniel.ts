@@ -1,4 +1,4 @@
-/*import { APIRoute } from "astro";
+import { APIRoute } from "astro";
 
 export const post: APIRoute = async ({ params, request }) => {
 
@@ -25,7 +25,9 @@ export const get: APIRoute = ({ params, request }) => {
       message: "This was a GET!",
     }),
   };
-};*/
+};
+
+/*
 
 export const config = {
   runtime: 'edge',
@@ -33,5 +35,5 @@ export const config = {
 
 export default (req: Request) => {
   return new Response(`Hello, from ${req.url} I'm now an Edge Function!`);
-};
+};*/
 
