@@ -50,7 +50,11 @@ const onSubmit = (email: string) => {
         buttons.forEach((button) => {
           button.addEventListener("click", () => {
             let test;
-            fetch("/daniel", {
+
+
+
+
+            fetch("/api/daniel", {
               method: "post",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -58,8 +62,7 @@ const onSubmit = (email: string) => {
               }),
             })
               .then((response) => {
-                test = response.json();
-                return response.json();
+               response.json();
               })
               .then((data) => {
                 console.log("Data ....");
