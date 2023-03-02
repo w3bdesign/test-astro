@@ -49,16 +49,15 @@ const onSubmit = (email: string) => {
         // Handle clicks on each button.
         buttons.forEach((button) => {
           button.addEventListener("click", () => {
-
-
             fetch("/daniel", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/text",
-              },
-
-              body: JSON.stringify({ "email": "test@epost.no" }),
-            
+              method: "post",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                user: {
+                  email: "test@epost.no",
+                  password: "password",
+                },
+              }),
             })
               .then((response) => response.json())
               .then((data) => {
@@ -69,27 +68,17 @@ const onSubmit = (email: string) => {
               });
           });
         });
-
-
-
-
-
 
         const getbuttons = document.querySelectorAll("button.get");
 
         // Handle clicks on each button.
         getbuttons.forEach((button) => {
           button.addEventListener("click", () => {
-  
-
             fetch("/api/daniel", {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
               },
-
-            
-            
             })
               .then((response) => response.json())
               .then((data) => {
@@ -100,28 +89,13 @@ const onSubmit = (email: string) => {
               });
           });
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
       </script>
 
       <p>hello</p>
 
       <button class="post"> ... post</button>
 
-      <button class="get">  ... get</button>
-
-   
+      <button class="get"> ... get</button>
     </main>
   </body>
 </html>
