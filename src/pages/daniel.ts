@@ -7,7 +7,7 @@ export const post: APIRoute = async ({ request }) => {
 
     const data = await request.json();
 
-    console.log("Data:", data)
+   // console.log("Data:", data)
 
 
     return {
