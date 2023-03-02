@@ -1,6 +1,6 @@
 import { APIRoute } from "astro";
 
-export const post: APIRoute = async ({ params, request }) => {
+export const post = async ({ params, request }) => {
 
 
   console.log("Params:", params)
@@ -19,7 +19,7 @@ export const post: APIRoute = async ({ params, request }) => {
 
 
 
-export const get: APIRoute = ({ params, request }) => {
+export const get = ({ params, request }) => {
   return {
     body: JSON.stringify({
       message: "This was a GET!",
