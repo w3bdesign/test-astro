@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "install": "node ./ugly.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^2.0.2",
