@@ -62,7 +62,8 @@ const onSubmit = (email: string) => {
               },
 
 
-              body: JSON.stringify({ email: "test@epost.no" }),
+              //body: JSON.stringify({ email: "test@epost.no" }),
+              body: ( "email: test@epost.no" ),
             })
               .then((response) => response.json())
               .then((data) => {
