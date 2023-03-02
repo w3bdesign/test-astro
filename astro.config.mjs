@@ -11,7 +11,7 @@ export default defineConfig({
   output: 'server',
   // integrations: [vercel()],
   adapter: vercel({
-    includeFiles: ['./src/pages/api/daniel.ts']
+    includeFiles: ['./src/pages/api/daniel.js']
   })
  // adapter: vercelServerless(),
 });
