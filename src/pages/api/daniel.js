@@ -9,6 +9,9 @@ export const post = async ({ params, request }) => {
 
 
   return {
+    headers: {
+      'Content-Type': 'text/plain'
+    },
     body: JSON.stringify({
       message: "This was a POST!",
     }),
