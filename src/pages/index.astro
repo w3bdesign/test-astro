@@ -48,13 +48,37 @@ const onSubmit = (email: string) => {
 
         // Handle clicks on each button.
         buttons.forEach((button) => {
-          button.addEventListener("click", () => {
+          button.addEventListener("click", async () => {
             let test;
 
 
 
+            const response = await fetch('/api/daniel', {
+    method: 'POST',
+    body: JSON.stringify({
+                email: "test@epost.no",
+              })
+  });
 
-            fetch("/api/daniel", {
+
+  const responseText = await response.text();
+  console.log("responseText", responseText); // logs 'OK'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*fetch("/api/daniel", {
               method: "post",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -65,14 +89,14 @@ const onSubmit = (email: string) => {
                response.json();
               })
               .then((data) => {
-                console.log("Data ....");
+                
                 console.log("Success:", data);
               })
               .catch((error) => {
                 console.error("Error:", error);
                 console.log("response.json(): ", test);
               });
-          });
+          });*/
         });
 
         const getbuttons = document.querySelectorAll("button.get");
