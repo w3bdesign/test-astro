@@ -49,29 +49,25 @@ const onSubmit = (email: string) => {
         // Handle clicks on each button.
         buttons.forEach((button) => {
           button.addEventListener("click", () => {
-            
             let test;
             fetch("/daniel", {
               method: "post",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
-                user: {
-                  email: "test@epost.no",
-                  password: "password",
-                },
+                email: "test@epost.no",
               }),
             })
               .then((response) => {
                 test = response.json();
                 return response.json();
-                
               })
               .then((data) => {
+                console.log("Data ....");
                 console.log("Success:", data);
               })
               .catch((error) => {
                 console.error("Error:", error);
-                console.log("response.json()", test);
+                console.log("response.json(): ", test);
               });
           });
         });
