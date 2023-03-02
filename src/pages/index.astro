@@ -51,52 +51,16 @@ const onSubmit = (email: string) => {
           button.addEventListener("click", async () => {
             let test;
 
-
-
-            const response = await fetch('/api/daniel', {
-    method: 'POST',
-    body: JSON.stringify({
-                email: "test@epost.no",
-              })
-  });
-
-
-  const responseText = await response.text();
-  console.log("responseText", responseText); // logs 'OK'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*fetch("/api/daniel", {
-              method: "post",
-              headers: { "Content-Type": "application/json" },
+            const response = await fetch("/api/daniel", {
+              method: "POST",
               body: JSON.stringify({
                 email: "test@epost.no",
               }),
-            })
-              .then((response) => {
-               response.json();
-              })
-              .then((data) => {
-                
-                console.log("Success:", data);
-              })
-              .catch((error) => {
-                console.error("Error:", error);
-                console.log("response.json(): ", test);
-              });
-          });*/
+            });
+
+            const responseText = await response.text();
+            console.log("responseText", responseText); // logs 'OK'
+          });
         });
 
         const getbuttons = document.querySelectorAll("button.get");
