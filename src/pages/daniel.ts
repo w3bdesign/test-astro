@@ -1,33 +1,22 @@
-import { APIRoute } from 'astro';
-
-
+import { APIRoute } from "astro";
 
 export const post: APIRoute = async ({ request }) => {
+  //const data = await request.json();
 
+  // console.log("Data:", data)
 
-    const data = await request.json();
+  return {
+    status: 200,
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      message: "This was a POST!",
+    }),
+  };
+};
 
-   // console.log("Data:", data)
-
-
-    return {
-      body: JSON.stringify({
-        message: "This was a POST!"
-      })
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-   /* return {
+/* return {
         status: 200,
         headers: {
           'content-type': 'application/json',
@@ -35,19 +24,9 @@ export const post: APIRoute = async ({ request }) => {
         body: JSON.stringify({ email: 'hello world' }),
       };*/
 
-
-
-
-   /* return {
+/* return {
       body: JSON.stringify({
         name: 'Astro',
         url: 'https://astro.build/',
       }),
     };*/
-
-
-
-
-
-
-  
