@@ -1,7 +1,7 @@
 import { APIRoute } from "astro";
 
 export const post: APIRoute = async ({ request }) => {
-  //const data = await request.json();
+  const data = await request.json();
 
   // console.log("Data:", data)
 
@@ -13,7 +13,8 @@ export const post: APIRoute = async ({ request }) => {
     },
 
     body: JSON.stringify({
-      message: "This was a POST!",
+      //message: "This was a POST!",
+      message: data
     }),
   };
 };
